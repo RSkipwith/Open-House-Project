@@ -8,7 +8,7 @@ namespace OpenHouseMarkiV
     {
         public string Name { get; set; }
         public bool HasHardwoods { get; set; }
-        public List<string> Descriptions { get; set; }
+        public List<string> Descriptions { get; set; } = new List<string>();
         public int numberOFRooms { get; set; }
 
         
@@ -26,14 +26,18 @@ namespace OpenHouseMarkiV
         {
             string answer = Program.GetUserResponse("Would you like to see" + "bathroom" + roomToShow.Name);
             if (Program.IsAffirmative(answer))
-
+            {
                 Console.WriteLine("Do you want to see the shower");
-
+            }
+            foreach (string description in roomToShow.Descriptions) 
+            {
+                Console.WriteLine(description);
+            }
             if (answer == "Yes")
-            Console.WriteLine("How long have been a home owner?");
-                              
+            {
+                Console.WriteLine("How long have been a home owner?");
+            }
             else
-
             {
                 Console.WriteLine("Are you currently looking to buy property in this area!");
                 string response2 = Console.ReadLine();
